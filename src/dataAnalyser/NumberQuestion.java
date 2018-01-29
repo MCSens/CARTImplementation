@@ -11,8 +11,8 @@ public class NumberQuestion extends Question{
 		this.value = value;
 	}
 
-	public NumberQuestion(Number value, Double gini) {
-		super(gini);
+	public NumberQuestion(Number value) {
+		super();
 		this.value = value;
 	}
 

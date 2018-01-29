@@ -13,8 +13,8 @@ public class StringQuestion extends Question{
 		return "StringQuestion [value=" + value + "]";
 	}
 
-	public StringQuestion(String value, Double gini) {
-		super(gini);
+	public StringQuestion(String value) {
+		super();
 		this.value = value;
 	}
 

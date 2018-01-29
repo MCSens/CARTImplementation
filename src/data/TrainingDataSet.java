@@ -67,7 +67,7 @@ public class TrainingDataSet {
 		for(int i = 0; i<properties.size(); i++){
 			 boolean exists = properties.get(i).isMatch(key, value);
 				 if(exists){
-					 //System.out.println("Wert ist enthalten");
+					 System.out.println("[TRACE]Wert ist enthalten");
 					 return exists;
 				 }
 		}
@@ -79,7 +79,7 @@ public class TrainingDataSet {
 		for(int i = 0; i<properties.size(); i++){
 			 boolean exists = properties.get(i).isMatch(key, value);
 				 if(exists){
-					 //System.out.println("Wert ist enthalten");
+					 System.out.println("[TRACE]Wert ist enthalten");
 					 return exists;
 				 }
 		}

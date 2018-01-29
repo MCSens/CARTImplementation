@@ -34,7 +34,9 @@ public class Test {
 		//System.out.println(apple2.match("diameter", 5.5));
 		//System.out.println(apple2.match("color", "green"));
 		TrainingDataSet ds = new TrainingDataSet("Fruits", apple1, apple2, apple3, apple4, lemon1, lemon2, lemon3, lemon4);
-		System.out.println("ANZAHL MATCHES: "+ds.countMatches("diameter",5.5));
+		
+		
+		//System.out.println("ANZAHL MATCHES: "+ds.countMatches("diameter",5.5));
 		//System.out.println(ds);
 		
 		//ds.isMatch("diameter", 6.5);

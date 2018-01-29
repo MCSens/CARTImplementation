@@ -34,6 +34,12 @@ public class Node implements Prediction{
 	public void setFalseNode(Prediction falseNode) {
 		this.falseNode = falseNode;
 	}
+
+	@Override
+	public String toString() {
+		return "Node [question=" + question + ",\n trueNode=" + trueNode
+				+ ",\n falseNode=" + falseNode + "]";
+	}
 	
 	
 	

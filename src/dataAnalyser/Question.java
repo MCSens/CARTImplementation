@@ -20,9 +20,8 @@ public class Question implements Comparable{
 		this.gini = gini;
 	}
 
-	public Question(Double gini) {
+	public Question() {
 		super();
-		this.gini = gini;
 	}
 
     @Override
