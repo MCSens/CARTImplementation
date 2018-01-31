@@ -31,7 +31,7 @@ public class Test {
 		Fruit lemon3 = new Fruit("Lemon", 9.0, "yellow");
 		Fruit lemon4 = new Fruit("Lemon", 7.0, "yellow");
 		//System.out.println(apple2.match("diameter", 3.0));
-		//System.out.println(apple2.match("diameter", 5.5));
+		//System.out.println(apple2.match("diameter", 5.5)); 
 		//System.out.println(apple2.match("color", "green"));
 		TrainingDataSet ds = new TrainingDataSet("Fruits", apple1, apple2, apple3, apple4, lemon1, lemon2, lemon3, lemon4);
 		

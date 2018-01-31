@@ -39,7 +39,7 @@ public class Node implements CART{
 
 	@Override
 	public String toString() {
-		return "Node [question=" + question + ",\n trueNode=" + trueNode
+		return "Node [question=" + question + ",\n trueNode=" + trueNode 
 				+ ",\n falseNode=" + falseNode + "]";
 	}
 

@@ -52,7 +52,7 @@ public class Fruit extends Property{
 	@Override
 	public boolean isMatch(String property, String value) {
 		// TODO Auto-generated method stub
-		switch(property){
+		switch(property){ 
 			case "label": 
 				return this.label.equals(value);
 			case "color": 

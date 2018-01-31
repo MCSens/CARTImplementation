@@ -12,7 +12,7 @@ public class Leaf implements CART{
 	public Leaf(String ... properties){
 		predictions = new ArrayList<String>();
 		for(String prop: properties){
-			predictions.add(prop);
+			predictions.add(prop); 
 		}
 	}
 	

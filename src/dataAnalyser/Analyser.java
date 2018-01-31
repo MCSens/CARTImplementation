@@ -188,7 +188,7 @@ public class Analyser {
 				bestQuestion = q;
 				minGini = q.getGini();
 			}
-		}
+		} 
 		System.out.println("[DEBUG]Best Question: "+bestQuestion+" with Gini "+minGini);
 		return minGini;
 	}

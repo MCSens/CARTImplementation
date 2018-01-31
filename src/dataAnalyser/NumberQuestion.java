@@ -12,7 +12,7 @@ public class NumberQuestion extends Question{
 	}
 
 	public NumberQuestion(Number value) {
-		super();
+		super(); 
 		this.value = value;
 	}
 

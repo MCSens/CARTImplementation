@@ -2,7 +2,7 @@ package data;
 
 public abstract class Property {
 	public String label;
-	
+	 
 	public String getLabel(){
 		return this.label;
 	}

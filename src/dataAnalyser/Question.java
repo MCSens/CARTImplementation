@@ -6,7 +6,7 @@ public abstract class Question implements Comparable{
 	private Double gini;
 	
 	public abstract String getStringValue();
-	
+	 
 	public abstract Number getNumberValue();
 	
 	public Double getGini(){

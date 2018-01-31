@@ -69,7 +69,7 @@ public class TrainingDataSet {
 				 if(exists){
 					 System.out.println("[TRACE]Wert ist enthalten");
 					 return exists;
-				 }
+				 } 
 		}
 		//System.out.println("Wert ist nicht enthalten");
 		return true;

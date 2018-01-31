@@ -42,7 +42,7 @@ public class TreeBuilder {
 				return new Leaf("LEAF "+Analyser.getUniqueLabels(matchingData));
 			}
 			else{
-				Node trueNode = new Node();
+				Node trueNode = new Node(); 
 				Node falseNode = new Node();
 				n.setTrueNode(TreeBuilder.buildTree(new Node(), matchingData));
 				n.setFalseNode(TreeBuilder.buildTree(new Node(), unmatchingData));
