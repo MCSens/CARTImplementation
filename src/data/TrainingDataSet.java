@@ -87,6 +87,7 @@ public class TrainingDataSet {
 		return true;
 	}
 	
+	//beide getMatch sollten zusammengefasst werden
 	public TrainingDataSet getMatch(String key, String value){ //Hier sollte eigentlidch eine Frage rein
 		ArrayList<Property> subset = new ArrayList<Property>();
 		for(int i = 0; i<properties.size(); i++){
@@ -96,7 +97,6 @@ public class TrainingDataSet {
 		TrainingDataSet subDataset = new TrainingDataSet(key, subset);
 		return subDataset;
 	}
-	
 	public TrainingDataSet getMatch(String key, Number value){
 		ArrayList<Property> subset = new ArrayList<Property>();
 		for(int i = 0; i<properties.size(); i++){

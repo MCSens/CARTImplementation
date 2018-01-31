@@ -21,4 +21,16 @@ public class StringQuestion extends Question{
 	public void setValue(String value) {
 		this.value = value;
 	}
+
+	@Override
+	public String getStringValue() {
+		// TODO Auto-generated method stub
+		return value;
+	}
+
+	@Override
+	public Number getNumberValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

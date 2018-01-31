@@ -1,4 +1,4 @@
-package com;
+package test;
 
 import giniValidator.Validator;
 

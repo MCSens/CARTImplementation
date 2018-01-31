@@ -192,4 +192,16 @@ public class Analyser {
 		System.out.println("[DEBUG]Best Question: "+bestQuestion+" with Gini "+minGini);
 		return minGini;
 	}
+	
+	public static boolean isQuestionTrue(Fruit f, Question q){
+		boolean match = false;
+		if(q instanceof StringQuestion){ //Can be done in one Line it Property handles Questions
+			match = f.isMatch("color", q.getStringValue());
+		}
+		else{
+			match = f.isMatch("diameter", q.getNumberValue());
+		}
+		System.out.println("[DEBUG] Question "+q+" for Fruit "+f+"is "+match);
+		return match;
+	}
 }

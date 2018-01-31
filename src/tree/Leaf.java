@@ -2,10 +2,11 @@ package tree;
 
 import java.util.ArrayList;
 
-import tree.Prediction;
+import tree.CART;
+import data.Fruit;
 import data.Property;
 
-public class Leaf implements Prediction{
+public class Leaf implements CART{
 	public ArrayList<String> predictions;
 	
 	public Leaf(String ... properties){
@@ -22,5 +23,11 @@ public class Leaf implements Prediction{
 	@Override
 	public String toString() {
 		return "Leaf [predictions=" + predictions + "]";
+	}
+
+	@Override
+	public String validate(Fruit f) {
+		// TODO Auto-generated method stub
+		return predictions.toString();
 	}
 }

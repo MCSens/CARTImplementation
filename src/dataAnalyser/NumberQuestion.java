@@ -20,4 +20,16 @@ public class NumberQuestion extends Question{
 	public String toString() {
 		return "NumberQuestion [value=" + value + "]";
 	}
+
+	@Override
+	public String getStringValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Number getNumberValue() {
+		// TODO Auto-generated method stub
+		return value;
+	}
 }

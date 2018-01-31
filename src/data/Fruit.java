@@ -43,7 +43,7 @@ public class Fruit extends Property{
 		// TODO Auto-generated method stub
 		switch(property){
 		case "diameter":
-			return this.diameter == value.doubleValue();
+			return this.diameter >= value.doubleValue();
 		default:
 			return false;
 		}

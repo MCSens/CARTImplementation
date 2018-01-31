@@ -2,15 +2,12 @@ package dataAnalyser;
 
 import java.util.Comparator;
 
-public class Question implements Comparable{
+public abstract class Question implements Comparable{
 	private Double gini;
 	
-	public String getStringValue(){
-		return "";
-	}
-	public Number getNumberValue(){
-		return 0.0;
-	}
+	public abstract String getStringValue();
+	
+	public abstract Number getNumberValue();
 	
 	public Double getGini(){
 		return gini;

@@ -1,12 +1,14 @@
 package tree;
 
+import data.Fruit;
 import dataAnalyser.Question;
+import dataAnalyser.StringQuestion;
 
-public class Node implements Prediction{
+public class Node implements CART{
 	//?!?! Push all Information through and delete the question that gain no information at the end?
 	private Question question;
-	private Prediction trueNode; //May be a Node or a Leaf
-	private Prediction falseNode;
+	private CART trueNode; //May be a Node or a Leaf
+	private CART falseNode;
 	
 	public Node(){
 	}
@@ -19,19 +21,19 @@ public class Node implements Prediction{
 		this.question = question;
 	}
 
-	public Prediction getTrueNode() {
+	public CART getTrueNode() {
 		return trueNode;
 	}
 
-	public void setTrueNode(Prediction trueNode) {
+	public void setTrueNode(CART trueNode) {
 		this.trueNode = trueNode;
 	}
 
-	public Prediction getFalseNode() {
+	public CART getFalseNode() {
 		return falseNode;
 	}
 
-	public void setFalseNode(Prediction falseNode) {
+	public void setFalseNode(CART falseNode) {
 		this.falseNode = falseNode;
 	}
 
@@ -40,7 +42,22 @@ public class Node implements Prediction{
 		return "Node [question=" + question + ",\n trueNode=" + trueNode
 				+ ",\n falseNode=" + falseNode + "]";
 	}
-	
-	
-	
+
+	@Override
+	public String validate(Fruit f) {
+		boolean match = false;
+		if(question instanceof StringQuestion){ //Can be done in one Line it Property handles Questions
+			match = f.isMatch("color", question.getStringValue());
+		}
+		else{
+			match = f.isMatch("diameter", question.getNumberValue());
+		}
+		
+		if(match){
+			return trueNode.validate(f);
+		}
+		else{
+			return falseNode.validate(f);
+		}
+	}
 }

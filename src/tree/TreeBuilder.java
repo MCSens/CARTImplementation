@@ -1,7 +1,7 @@
 package tree;
 
 import tree.Node;
-import tree.Prediction;
+import tree.CART;
 import data.TrainingDataSet;
 import dataAnalyser.Analyser;
 import dataAnalyser.NumberQuestion;
@@ -15,7 +15,7 @@ public class TreeBuilder {
 	//If result has 1 entry -> Leaf
 	//How do I know I am at the end??
 	
-	public static Prediction buildTree(Node n, TrainingDataSet tds){
+	public static CART buildTree(Node n, TrainingDataSet tds){
 		//1. Create List of questions for the particular Training Set
 		QuestionList ql = Analyser.getQuestions(tds);
 		
