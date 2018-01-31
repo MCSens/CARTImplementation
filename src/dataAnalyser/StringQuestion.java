@@ -33,4 +33,13 @@ public class StringQuestion extends Question{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+    public boolean equals(Object o) {
+		boolean eq = false;
+		if(o instanceof StringQuestion){
+			eq = this.value.equals(((StringQuestion)o).getStringValue());
+		}
+		return eq;
+    }	
 }

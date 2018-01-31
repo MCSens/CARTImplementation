@@ -10,16 +10,21 @@ import data.Property;
 public class Analyser {
 	//This Class Creates the Questions that will build the tree
 	public static QuestionList getQuestions(TrainingDataSet ds){
+		System.out.println("[TRACE]Analyser.getQuestions");
 		List<Question> questionList = new ArrayList<Question>();
 		
 		ArrayList<Property> checkValues = (ArrayList<Property>) ds.getProperties();
 		for(int i = 0; i<checkValues.size(); i++){
 			Property p = checkValues.get(i);
-			//System.out.println("   At the moment checking:"+p);
-			questionList = Analyser.addUniqueString(questionList, ((Fruit)p).getColor()); //Liefer echt Mappen!!!
-			questionList = Analyser.addUniqueNumber(questionList, ((Fruit)p).getDiameter());
-			//numberValues = Analyser.addUniqueNumber(numberValues, ((Fruit)p).getDiameter());
-			//numberValues = Analyser.addUniqueNumber(numberValues, ((Fruit)p).getWhateverValue());
+			StringQuestion sq = new StringQuestion(((Fruit)p).getColor());
+			NumberQuestion nq = new NumberQuestion(((Fruit)p).getDiameter());
+			//System.out.println("   At the moment checking Label: "+label);
+			if(!questionList.contains(sq)){
+				questionList.add(sq);
+			}
+			if(!questionList.contains(nq)){
+				questionList.add(nq);
+			}
 		}
 		return new QuestionList(questionList);
 	}
@@ -38,69 +43,7 @@ public class Analyser {
 		}
 		return labelList;
 	}
-	
-	private static List<Question> addUniqueString(List<Question> uniqueValues, String value){
-		//Vor dem hinzufügen in die Liste auf Uniqe geprüft
-		//Dafür wird durch jede Frage iteriert
-		StringQuestion sq = new StringQuestion(value);
-		//System.out.println("Gerade checke ich: "+value);
-		if(uniqueValues.size()==0){
-			uniqueValues.add(sq);
-		}
-		else{	
-			for(int i = 0; i<uniqueValues.size();i++){
-				//Iteriert durch jede bisherige Frage durch
-				Question q = uniqueValues.get(i);
-				if(q instanceof StringQuestion){
-					//Ausgabe der aktuell betrachteten Frage
-					String testStr = ((StringQuestion)q).getValue();
-					//System.out.println("Hier der Teststr:" +testStr);
-					if(((StringQuestion)q).getValue().equals(value)){
-						//System.out.println(value+" war nicht unique, for wird verlassen!");
-						return uniqueValues;
-					}
-				}
-				else{
-					//Wenn die Frage eine Nummer ist kann weitergegangen werden
-					continue;
-				}
-			}
-			uniqueValues.add(sq);
-		}
-        return uniqueValues;
-	}
-	
-	private static List<Question> addUniqueNumber(List<Question> uniqueValues, Number value){
-		//Vor dem hinzufügen in die Liste auf Uniqe geprüft
-		//Dafür wird durch jede Frage iteriert
-		NumberQuestion sq = new NumberQuestion(value);
-		//System.out.println("Gerade checke ich: "+value);
-		if(uniqueValues.size()==0){ //Wenn leer, füge direkt eine Frage hinzu
-			uniqueValues.add(sq);
-		}
-		else{	
-			for(int i = 0; i<uniqueValues.size();i++){
-				//Iteriert durch jede bisherige Frage durch
-				Question q = uniqueValues.get(i);
-				if(q instanceof NumberQuestion){
-					//Ausgabe der aktuell betrachteten Frage
-					Number testStr = ((NumberQuestion)q).getValue();
-					//System.out.println("Hier die Testnummer: " +testStr);
-					if(((NumberQuestion)q).getValue().equals(value)){
-						//System.out.println(value+" war nicht unique, for wird verlassen!");
-						return uniqueValues;
-					}
-				}
-				else{
-					//Wenn die Frage eine Nummer ist kann weitergegangen werden
-					continue;
-				}
-			}
-			uniqueValues.add(sq);
-		}
-        return uniqueValues;
-	}	
-	
+		
 	public static Question getBestGiniQuestion(TrainingDataSet ds, QuestionList dl){
 		/*
 		counts = class_counts(rows)

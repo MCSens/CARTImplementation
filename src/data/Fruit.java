@@ -82,12 +82,6 @@ public class Fruit extends Property{
 		}
 		//Some change
 	}
-	@Override
-	public boolean comparator(Property properties) {
-		// TODO Auto-generated method stub
-		Fruit f = (Fruit)properties;
-		return false;
-	}
 }
 	
 	

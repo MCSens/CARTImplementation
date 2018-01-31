@@ -10,5 +10,4 @@ public abstract class Property {
 	public abstract boolean isMatch(String property, Number value);
 	public abstract Property getMatch(String property, String value);
 	public abstract Property getMatch(String property, Number value);
-	public abstract boolean comparator(Property property);
 }
