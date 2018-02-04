@@ -1,0 +1,145 @@
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.49382716049382713
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.31999999999999984
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.31999999999999984
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444444
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: StringQuestion [value=red] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: StringQuestion [value=red] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.46875
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.31999999999999984
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.31999999999999984
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: NumberQuestion [value=7.5] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: StringQuestion [value=yellow] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.489795918367347
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.375
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.375
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: NumberQuestion [value=9.0] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: StringQuestion [value=yellow] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.5
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444444
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444444
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: NumberQuestion [value=7.0] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Best Question: StringQuestion [value=yellow] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,149 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,149 - Calculated Impurity = 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.48
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.5
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.5
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Best Question: StringQuestion [value=green] with Gini 0.4444444444444445
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Gini Value: 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.4444444444444445
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Best Question: NumberQuestion [value=6.5] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Best Question: StringQuestion [value=green] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.5
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.5
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Best Question: StringQuestion [value=green] with Gini 0.5
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Gini Value: 0.5
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Returning a new node:Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Apple]]],
+ falseNode=Leaf [predictions=[LEAF [Apple, Lemon]]]]
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.5
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.5
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Best Question: NumberQuestion [value=6.5] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Best Question: StringQuestion [value=yellow] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Gini Value: 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Calculated Impurity = 0.0
+Analyser.java [DEBUG]: 2018-02-03 12:41:15,164 - Best Question: StringQuestion [value=yellow] with Gini 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Gini Value: 0.0
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Returning a new node:Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Leaf [predictions=[LEAF [Apple]]]]
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Returning a new node:Node [question=StringQuestion [value=green],
+ trueNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Apple]]],
+ falseNode=Leaf [predictions=[LEAF [Apple, Lemon]]]],
+ falseNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Leaf [predictions=[LEAF [Apple]]]]]
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Returning a new node:Node [question=NumberQuestion [value=7.0],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=StringQuestion [value=green],
+ trueNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Apple]]],
+ falseNode=Leaf [predictions=[LEAF [Apple, Lemon]]]],
+ falseNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Leaf [predictions=[LEAF [Apple]]]]]]
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Returning a new node:Node [question=NumberQuestion [value=9.0],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=NumberQuestion [value=7.0],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=StringQuestion [value=green],
+ trueNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Apple]]],
+ falseNode=Leaf [predictions=[LEAF [Apple, Lemon]]]],
+ falseNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Leaf [predictions=[LEAF [Apple]]]]]]]
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Returning a new node:Node [question=NumberQuestion [value=7.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=NumberQuestion [value=9.0],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=NumberQuestion [value=7.0],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=StringQuestion [value=green],
+ trueNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Apple]]],
+ falseNode=Leaf [predictions=[LEAF [Apple, Lemon]]]],
+ falseNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Leaf [predictions=[LEAF [Apple]]]]]]]]
+TreeBuilder.java [DEBUG]: 2018-02-03 12:41:15,164 - Returning a new node:Node [question=StringQuestion [value=red],
+ trueNode=Leaf [predictions=[LEAF [Apple]]],
+ falseNode=Node [question=NumberQuestion [value=7.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=NumberQuestion [value=9.0],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=NumberQuestion [value=7.0],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Node [question=StringQuestion [value=green],
+ trueNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Apple]]],
+ falseNode=Leaf [predictions=[LEAF [Apple, Lemon]]]],
+ falseNode=Node [question=NumberQuestion [value=6.5],
+ trueNode=Leaf [predictions=[LEAF [Lemon]]],
+ falseNode=Leaf [predictions=[LEAF [Apple]]]]]]]]]
