@@ -1,11 +1,15 @@
 package tree;
 
+import org.slf4j.LoggerFactory;
+
+import ch.qos.logback.classic.Logger;
 import data.Fruit;
 import dataAnalyser.Question;
 import dataAnalyser.StringQuestion;
 
 public class Node implements CART{
 	//?!?! Push all Information through and delete the question that gain no information at the end?
+	private static Logger log = (Logger) LoggerFactory.getLogger("Node");
 	private Question question;
 	private CART trueNode; //May be a Node or a Leaf
 	private CART falseNode;

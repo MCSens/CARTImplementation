@@ -2,7 +2,13 @@ package data;
 
 import java.util.*;
 
+import org.slf4j.LoggerFactory;
+
+import ch.qos.logback.classic.Logger;
+import dataAnalyser.Analyser;
+
 public class TrainingDataSet {
+	private static Logger log = (Logger) LoggerFactory.getLogger("TrainingDataSet");
 	private String key;
 	private List<Property> properties;
 	private int size;
@@ -17,6 +23,7 @@ public class TrainingDataSet {
 		}
 		this.key = key;
 		this.size = this.properties.size();
+		log.debug("Created a TrainingDataSet {} with properties: {}", key, properties);
 	}
 	
 	public TrainingDataSet(String key, ArrayList<Property> properties){
@@ -31,6 +38,10 @@ public class TrainingDataSet {
 
 	public void setSize(int size) {
 		this.size = size;
+	}
+	
+	public String getKey(){
+		return this.key;
 	}
 
 	public List<Property> getProperties(){
@@ -48,9 +59,11 @@ public class TrainingDataSet {
 		int countMatches = 0;
 		for(int i = 0; i<properties.size(); i++){
 			 if(properties.get(i).isMatch(key, value)){
+				 log.trace("The Property {} matches Key/Value {}", properties.get(i), key+"/"+value);
 				 countMatches++;
 			 }
 		}
+		log.debug("For Key/Value {} we found {} matches", key+"/"+value, countMatches);
 		return countMatches;
 	}
 	public int countMatches(String key, Number value){
@@ -60,6 +73,7 @@ public class TrainingDataSet {
 				 countMatches++;
 			 }
 		}
+		log.debug("For Key/Value {} we found {} matches", key+"/"+value, countMatches);
 		return countMatches;
 	}
 	
@@ -67,24 +81,24 @@ public class TrainingDataSet {
 		for(int i = 0; i<properties.size(); i++){
 			 boolean exists = properties.get(i).isMatch(key, value);
 				 if(exists){
-					 System.out.println("[TRACE]Wert ist enthalten");
+					 log.trace("Contains value "+value);
 					 return exists;
 				 } 
 		}
 		//System.out.println("Wert ist nicht enthalten");
-		return true;
+		return false;
 	}
 	
 	public boolean isMatch(String key, Number value){
 		for(int i = 0; i<properties.size(); i++){
 			 boolean exists = properties.get(i).isMatch(key, value);
 				 if(exists){
-					 System.out.println("[TRACE]Wert ist enthalten");
+					 log.debug("DataSet {} contains value {}", this.key, value);
 					 return exists;
 				 }
 		}
 		//System.out.println("Wert ist nicht enthalten");
-		return true;
+		return false;
 	}
 	
 	//beide getMatch sollten zusammengefasst werden
@@ -94,7 +108,8 @@ public class TrainingDataSet {
 			 Property p = properties.get(i).getMatch(key, value); //getMatch of Property
 			 if(p!=null)subset.add(p);
 		}
-		TrainingDataSet subDataset = new TrainingDataSet(key, subset);
+		TrainingDataSet subDataset = new TrainingDataSet(this.getKey(), subset);
+		log.debug("Key/Value {} matches for this DataSet: {}",key+"/"+value,subDataset);
 		return subDataset;
 	}
 	public TrainingDataSet getMatch(String key, Number value){
@@ -103,7 +118,8 @@ public class TrainingDataSet {
 			 Property p = properties.get(i).getMatch(key, value);
 			 if(p!=null)subset.add(p);
 		}
-		TrainingDataSet subDataset = new TrainingDataSet(key, subset);
+		TrainingDataSet subDataset = new TrainingDataSet(this.getKey(), subset);
+		log.debug("Key/Value {} matches for this DataSet: {}",key+"/"+value,subDataset);
 		return subDataset;
 	}	
 	public TrainingDataSet removeMatch(String key, String value){
@@ -116,6 +132,7 @@ public class TrainingDataSet {
 			 }
 		}
 		TrainingDataSet subDataset = new TrainingDataSet(key, subset);
+		log.debug("Key/Value {} matches removed, returning this DataSet: {}",key+"/"+value,subDataset);
 		return subDataset;
 	}
 	public TrainingDataSet removeMatch(String key, Number value){
@@ -127,6 +144,7 @@ public class TrainingDataSet {
 			 }
 		}
 		TrainingDataSet subDataset = new TrainingDataSet(key, subset);
+		log.debug("Key/Value {} matches removed, returning this DataSet: {}",key+"/"+value,subDataset);
 		return subDataset;
 	}
 }

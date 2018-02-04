@@ -10,7 +10,7 @@ import dataAnalyser.Analyser;
 import dataAnalyser.Question;
 import dataAnalyser.QuestionList;
 
-public class Test {
+public class MainTest {
 
 	public static void main(String[] args) {
 		/*

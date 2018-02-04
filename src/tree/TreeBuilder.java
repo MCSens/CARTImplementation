@@ -1,5 +1,8 @@
 package tree;
 
+import org.slf4j.LoggerFactory;
+
+import ch.qos.logback.classic.Logger;
 import tree.Node;
 import tree.CART;
 import data.TrainingDataSet;
@@ -10,6 +13,7 @@ import dataAnalyser.QuestionList;
 import dataAnalyser.StringQuestion;
 
 public class TreeBuilder {
+	private static Logger log = (Logger) LoggerFactory.getLogger("TreeBuilder");
 	//Get Best GiniQuestion, this is root node.
 	//Divide Subset by fitting rule, not fitting rule
 	//If result has 1 entry -> Leaf
@@ -21,7 +25,7 @@ public class TreeBuilder {
 		
 		//2. Get Best Question
 		Question q = Analyser.getBestGiniQuestion(tds, ql);
-		System.out.println("[DEBUG]Gini Value: "+q.getGini());
+		log.debug("Gini Value: "+q.getGini());
 		if(q.getGini() != 1.0){
 			//3. Create Root Node
 			n.setQuestion(q);
@@ -46,8 +50,7 @@ public class TreeBuilder {
 				Node falseNode = new Node();
 				n.setTrueNode(TreeBuilder.buildTree(new Node(), matchingData));
 				n.setFalseNode(TreeBuilder.buildTree(new Node(), unmatchingData));
-				System.out.println("[INFO]Hier gebe ich eine neue Node zurück");
-				System.out.println("[INFO]"+n);
+				log.debug("Returning a new node:"+n);
 				return n;
 			}
 		}
