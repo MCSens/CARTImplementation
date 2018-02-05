@@ -1,5 +1,8 @@
 package data;
 
+import dataAnalyser.Question;
+import dataAnalyser.StringQuestion;
+
 public class Fruit extends Property{ 
 	//THIS WILL CAUSE ISSUES ALONG THE LINE!!!
 	//IT's not feasible to do it like this, the parameters must be completely flexible, 
@@ -39,48 +42,37 @@ public class Fruit extends Property{
 	}
 	
 	@Override
-	public boolean isMatch(String property, Number value) {
+	public boolean isMatch(Question q) {
 		// TODO Auto-generated method stub
-		switch(property){
-		case "diameter":
-			return this.diameter >= value.doubleValue();
-		default:
-			return false;
+		if(q instanceof StringQuestion){
+			switch(q.getProperty()){
+			case "label": 
+				return this.label.equals(q.getStringValue());
+			case "color": 
+				return this.color.equals(q.getStringValue());	
+			default:
+				return false;
+			}
+		}
+		else{
+			switch(q.getProperty()){
+			case "diameter":
+				return this.diameter >= q.getNumberValue().doubleValue();
+			default:
+				return false;
+			}
 		}
 	}
 	
 	@Override
-	public boolean isMatch(String property, String value) {
+	public Property getMatch(Question q) {
 		// TODO Auto-generated method stub
-		switch(property){ 
-			case "label": 
-				return this.label.equals(value);
-			case "color": 
-				return this.color.equals(value);
-			default:
-				return false;
-		}
-	}
-	@Override
-	public Property getMatch(String property, String value) {
-		// TODO Auto-generated method stub
-		if(isMatch(property,value)){
+		if(isMatch(q)){
 			return this;
 		}
 		else{
 			return null;
 		}
-	}
-	@Override
-	public Property getMatch(String property, Number value) {
-		// TODO Auto-generated method stub
-		if(isMatch(property,value)){
-			return this;
-		}
-		else{
-			return null;
-		}
-		//Some change
 	}
 }
 	

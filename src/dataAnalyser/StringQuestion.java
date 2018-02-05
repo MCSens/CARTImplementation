@@ -2,7 +2,6 @@ package dataAnalyser;
 
 public class StringQuestion extends Question{
 	private String value;
-	//private Double gini;
 
 	public String getValue() {
 		return value;
@@ -13,8 +12,8 @@ public class StringQuestion extends Question{
 		return "StringQuestion [value=" + value + "]";
 	}
 
-	public StringQuestion(String value) {
-		super();
+	public StringQuestion(String property, String value) {
+		super(property);
 		this.value = value;
 	}
 

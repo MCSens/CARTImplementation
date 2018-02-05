@@ -42,7 +42,7 @@ public class PredictionTest {
 		 
 		Fruit test1 = new Fruit("?",6.0,"red");
 		String prediction = tree.validate(test1);
-		assertEquals(prediction, "Apple");
 		log.info("Prediction for {} is {}",test1,prediction);
+		assertEquals(prediction, "[LEAF [Apple]]");
 	}
 }

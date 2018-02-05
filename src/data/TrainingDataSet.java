@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 
 import ch.qos.logback.classic.Logger;
 import dataAnalyser.Analyser;
+import dataAnalyser.Question;
+import dataAnalyser.StringQuestion;
 
 public class TrainingDataSet {
 	private static Logger log = (Logger) LoggerFactory.getLogger("TrainingDataSet");
@@ -55,96 +57,56 @@ public class TrainingDataSet {
 		return str;
 	}
 	
-	public int countMatches(String key, String value){
+	public int countMatches(Question q){
 		int countMatches = 0;
+		boolean isMatch;
 		for(int i = 0; i<properties.size(); i++){
-			 if(properties.get(i).isMatch(key, value)){
-				 log.trace("The Property {} matches Key/Value {}", properties.get(i), key+"/"+value);
-				 countMatches++;
-			 }
+			isMatch = properties.get(i).isMatch(q);
+			if(isMatch){
+				log.trace("The Property {} matches the Question {}", properties.get(i), q);
+				countMatches++;
+			}
 		}
-		log.debug("For Key/Value {} we found {} matches", key+"/"+value, countMatches);
-		return countMatches;
-	}
-	public int countMatches(String key, Number value){
-		int countMatches = 0;
-		for(int i = 0; i<properties.size(); i++){
-			 if(properties.get(i).isMatch(key, value)){
-				 countMatches++;
-			 }
-		}
-		log.debug("For Key/Value {} we found {} matches", key+"/"+value, countMatches);
+		log.debug("For Question {} we found {} matches", q, countMatches);
 		return countMatches;
 	}
 	
-	public boolean isMatch(String key, String value){
+	public boolean isMatch(Question q){
+		boolean exists;
 		for(int i = 0; i<properties.size(); i++){
-			 boolean exists = properties.get(i).isMatch(key, value);
-				 if(exists){
-					 log.trace("Contains value "+value);
-					 return exists;
-				 } 
-		}
-		//System.out.println("Wert ist nicht enthalten");
-		return false;
-	}
-	
-	public boolean isMatch(String key, Number value){
-		for(int i = 0; i<properties.size(); i++){
-			 boolean exists = properties.get(i).isMatch(key, value);
-				 if(exists){
-					 log.debug("DataSet {} contains value {}", this.key, value);
-					 return exists;
-				 }
+			exists = properties.get(i).isMatch(q);
+			if(exists){
+				log.trace("Contains value for Question "+q);
+				return exists;
+			} 
 		}
 		//System.out.println("Wert ist nicht enthalten");
 		return false;
 	}
 	
 	//beide getMatch sollten zusammengefasst werden
-	public TrainingDataSet getMatch(String key, String value){ //Hier sollte eigentlidch eine Frage rein
+	public TrainingDataSet getMatch(Question q){ //Hier sollte eigentlidch eine Frage rein
 		ArrayList<Property> subset = new ArrayList<Property>();
 		for(int i = 0; i<properties.size(); i++){
-			 Property p = properties.get(i).getMatch(key, value); //getMatch of Property
+			 Property p = properties.get(i).getMatch(q); //getMatch of Property
 			 if(p!=null)subset.add(p);
 		}
 		TrainingDataSet subDataset = new TrainingDataSet(this.getKey(), subset);
-		log.debug("Key/Value {} matches for this DataSet: {}",key+"/"+value,subDataset);
+		log.debug("For Question {} found Matches: {}",q,subDataset);
 		return subDataset;
 	}
-	public TrainingDataSet getMatch(String key, Number value){
-		ArrayList<Property> subset = new ArrayList<Property>();
-		for(int i = 0; i<properties.size(); i++){
-			 Property p = properties.get(i).getMatch(key, value);
-			 if(p!=null)subset.add(p);
-		}
-		TrainingDataSet subDataset = new TrainingDataSet(this.getKey(), subset);
-		log.debug("Key/Value {} matches for this DataSet: {}",key+"/"+value,subDataset);
-		return subDataset;
-	}	
-	public TrainingDataSet removeMatch(String key, String value){
+	
+	public TrainingDataSet removeMatch(Question q){
 		ArrayList<Property> subset = (ArrayList<Property>) this.properties;
 		for(int i = 0; i<properties.size(); i++){
-			 Property p = properties.get(i).getMatch(key, value); //getMatch of Property FUNZT NICHT GESCHEID!
+			 Property p = properties.get(i).getMatch(q); //getMatch of Property FUNZT NICHT GESCHEID!
 			 if(p!=null){
 				 subset.remove(p);
 				 i--;
 			 }
 		}
 		TrainingDataSet subDataset = new TrainingDataSet(key, subset);
-		log.debug("Key/Value {} matches removed, returning this DataSet: {}",key+"/"+value,subDataset);
-		return subDataset;
-	}
-	public TrainingDataSet removeMatch(String key, Number value){
-		ArrayList<Property> subset = (ArrayList<Property>) this.properties;
-		for(int i = 0; i<properties.size(); i++){
-			 Property p = properties.get(i).getMatch(key, value);
-			 if(p!=null){
-				 subset.remove(p);
-			 }
-		}
-		TrainingDataSet subDataset = new TrainingDataSet(key, subset);
-		log.debug("Key/Value {} matches removed, returning this DataSet: {}",key+"/"+value,subDataset);
+		log.debug("Question {} matches removed, returning this DataSet: {}",q,subDataset);
 		return subDataset;
 	}
 }

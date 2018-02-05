@@ -11,8 +11,8 @@ public class NumberQuestion extends Question{
 		this.value = value;
 	}
 
-	public NumberQuestion(Number value) {
-		super(); 
+	public NumberQuestion(String property, Number value) {
+		super(property); 
 		this.value = value;
 	}
 

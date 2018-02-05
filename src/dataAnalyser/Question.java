@@ -1,10 +1,15 @@
 package dataAnalyser;
 
-import java.util.Comparator;
-
 public abstract class Question implements Comparable{
 	private Double gini;
+	private String property;
 	
+	public String getProperty() {
+		return property;
+	}
+	public void setProperty(String property) {
+		this.property = property;
+	}
 	public abstract String getStringValue();
 	public abstract Number getNumberValue();
 	public abstract boolean equals(Object o);
@@ -17,8 +22,9 @@ public abstract class Question implements Comparable{
 		this.gini = gini;
 	}
 
-	public Question() {
+	public Question(String property) {
 		super();
+		this.property = property;
 	}
 
     @Override

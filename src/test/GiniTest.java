@@ -34,19 +34,17 @@ public class GiniTest {
 	@Test
 	public void giniCalculationTest(){
 		((Logger) LoggerFactory.getLogger("GiniTest")).setLevel(Level.DEBUG);
-		//log.setLevel(Level.DEBUG);
-		//Creating Testdata
 		Fruit banana1 = new Fruit("Banana1", 5.5, "yellow");
 		Fruit banana2 = new Fruit("Banana2", 6.5, "yellow"); 
 		TrainingDataSet ds = new TrainingDataSet("Fruits", banana1,banana2);
 		
 		//After applying that question you have a 50% change if you randomly assign a lable
 		List<Question> list = new ArrayList<Question>();
-		list.add(new StringQuestion("yellow"));
+		list.add(new StringQuestion("color","yellow"));
 		
 		QuestionList ql = new QuestionList(list);
-		double gini = Analyser.getGiniValue(ds, new StringQuestion("yellow"));
-		assertEquals(0.5, Analyser.getGiniValue(ds, new StringQuestion("yellow")), 0.001);
-		log.trace(""+gini);
+		double gini = Analyser.getGiniValue(ds, new StringQuestion("color","yellow"));
+		assertEquals(0.5, Analyser.getGiniValue(ds, new StringQuestion("color","yellow")), 0.001);
+		log.trace("Calculated Gini Value: "+gini);
 	}
 }

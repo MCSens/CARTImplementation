@@ -1,7 +1,6 @@
 package tree;
 
 import org.slf4j.LoggerFactory;
-
 import ch.qos.logback.classic.Logger;
 import tree.Node;
 import tree.CART;
@@ -33,14 +32,8 @@ public class TreeBuilder {
 			//4. Build Subtrees depending on true/false
 			TrainingDataSet matchingData;
 			TrainingDataSet unmatchingData; 
-			if(q instanceof StringQuestion){ //Unnecessary, store label in Question
-				matchingData = tds.getMatch("color", ((StringQuestion)q).getValue());
-				unmatchingData = tds.removeMatch("color", ((StringQuestion)q).getValue());
-			}
-			else{
-				matchingData = tds.getMatch("diameter", ((NumberQuestion)q).getValue());
-				unmatchingData = tds.removeMatch("diameter", ((NumberQuestion)q).getValue());	
-			}
+			matchingData = tds.getMatch(q);
+			unmatchingData = tds.removeMatch(q);
 			
 			if(matchingData.getProperties().size()==0 || unmatchingData.getProperties().size()==0){
 				return new Leaf("LEAF "+Analyser.getUniqueLabels(matchingData));

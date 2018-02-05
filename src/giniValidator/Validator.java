@@ -14,13 +14,14 @@ public class Validator {
 	//This class will create the GINI Factor to build a usefull tree
 	public static void bestGiniQuestion(TrainingDataSet ds, QuestionList dl){
 		/*
+		
 		counts = class_counts(rows)
 			    impurity = 1
 			    for lbl in counts:
 			        prob_of_lbl = counts[lbl] / float(len(rows))
 			        impurity -= prob_of_lbl**2
 			    return impurity
-		*/
+		
 		//Iteriert durch alle Fragen und teilt Anzahl Elemente mit dem KEy durch Anzahl Antworten
 		ArrayList<Question> questionlist = (ArrayList<Question>) dl.getQuestionList();
 		Question bestQuestion = null; 
@@ -92,5 +93,6 @@ public class Validator {
 		}
 		System.out.println("Best Question: "+bestQuestion+" with Gini "+maxGini);
 		//return tds;
+		*/
 	}
 }

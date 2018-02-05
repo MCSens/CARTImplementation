@@ -27,8 +27,8 @@ public class Analyser {
 		ArrayList<Property> checkValues = (ArrayList<Property>) ds.getProperties();
 		for(int i = 0; i<checkValues.size(); i++){
 			Property p = checkValues.get(i);
-			StringQuestion sq = new StringQuestion(((Fruit)p).getColor());
-			NumberQuestion nq = new NumberQuestion(((Fruit)p).getDiameter());
+			Question sq = new StringQuestion("color",((Fruit)p).getColor());
+			Question nq = new NumberQuestion("diameter", ((Fruit)p).getDiameter());
 			if(!questionList.contains(sq)){
 				questionList.add(sq);
 				log.trace("Question {} has been added to the list",sq);
@@ -42,7 +42,11 @@ public class Analyser {
 		return new QuestionList(questionList);
 	}
 	
-	public static List<String> getUniqueLabels(TrainingDataSet ds){ //Sollte man
+	/**
+	 * This method is called by Leafs to get the predictions
+	 * Should be improved to give weighted predictions
+	 */
+	public static List<String> getUniqueLabels(TrainingDataSet ds){
 		List<String> labelList = new ArrayList<String>();
 		
 		ArrayList<Property> checkValues = (ArrayList<Property>) ds.getProperties();
@@ -77,18 +81,13 @@ public class Analyser {
 			log.trace("Current Question: "+q);
 			double impurity = 1.0;
 			TrainingDataSet tds = null;
-			if(q instanceof StringQuestion){ //Can be done in one Line it Property handles Questions
-				tds = ds.getMatch("color", ((StringQuestion)q).getValue());
-			}
-			else{
-				tds = ds.getMatch("diameter", ((NumberQuestion)q).getValue());
-			}
+			tds = ds.getMatch(q);
 			log.trace("Resulting SubSet: "+tds);
 			List<String> uniqueLabels =  Analyser.getUniqueLabels(tds);
 			int countDatarows = tds.getSize();
 			for(int j = 0; j<uniqueLabels.size();j++){
 				String currentLabel = uniqueLabels.get(j);
-				int countMatches = tds.countMatches("label", currentLabel); 
+				int countMatches = tds.countMatches(new StringQuestion("label", currentLabel)); 
 				log.trace("Found {} matches for label  {}", countMatches, currentLabel);
 				//Randomly draw one label and what are the chances of hitting it? label/max_rows
 				double probabilityOfMatch = (double)countMatches/(double)countDatarows;
@@ -121,17 +120,12 @@ public class Analyser {
 		double impurity=1.0;
 		double minGini = 1.0;
 		TrainingDataSet tds = null;
-		if(q instanceof StringQuestion){ //Can be done in one Line it Property handles Questions
-			tds = ds.getMatch("color", ((StringQuestion)q).getValue());
-		}
-		else{
-			tds = ds.getMatch("diameter", ((NumberQuestion)q).getValue());
-		}
+		tds = ds.getMatch(q);
 		log.debug("Created Subset {} for Question {}",tds,q);
 		List<String> uniqueLabels =  Analyser.getUniqueLabels(tds);
 		int countDatarows = tds.getSize();
 		for(int j = 0; j<uniqueLabels.size();j++){
-			int countMatches = tds.countMatches("label", (uniqueLabels.get(j))); 
+			int countMatches = tds.countMatches(new StringQuestion("label", (uniqueLabels.get(j)))); 
 			log.trace("CountMatches: "+countMatches+" | CountLabels: "+uniqueLabels.size());
 			//Randomly draw one label and what are the chances of hitting it? label/max_rows
 			double probabilityOfMatch = (double)countMatches/(double)countDatarows;
@@ -146,12 +140,7 @@ public class Analyser {
 	
 	public static boolean isQuestionTrue(Fruit f, Question q){
 		boolean match = false;
-		if(q instanceof StringQuestion){ //Can be done in one Line it Property handles Questions
-			match = f.isMatch("color", q.getStringValue());
-		}
-		else{
-			match = f.isMatch("diameter", q.getNumberValue());
-		}
+		match = f.isMatch(q);
 		log.debug("Question "+q+" for Fruit "+f+"is "+match);
 		return match;
 	}

@@ -50,12 +50,7 @@ public class Node implements CART{
 	@Override
 	public String validate(Fruit f) {
 		boolean match = false;
-		if(question instanceof StringQuestion){ //Can be done in one Line it Property handles Questions
-			match = f.isMatch("color", question.getStringValue());
-		}
-		else{
-			match = f.isMatch("diameter", question.getNumberValue());
-		}
+		match = f.isMatch(this.question);
 		
 		if(match){
 			return trueNode.validate(f);
